@@ -43,17 +43,21 @@ def draw():
             fill(colors[1])
             if state[1] == 'X':
                 fill(colors[0])
-        
-            text(state[1] + " Wins", width/2, height/2, 20)
             
-            # Change what menu I'm on
-            # Clear board
+            mymenu.winner(state[1])
+            
+            mymenu.manualMenu(10);
+            game = False
         
         board, turn = user_input(board, turn)
     else:
         background(255)
         mymenu.show()
         menuInput = mymenu.input()
+        
+        if (menuInput == 10):
+            board = [[N, N, N],[N, N, N],[N, N, N]]
+            mymenu.reset(width, height)
         
         # Start Game
         if (menuInput == 0):

@@ -6,6 +6,14 @@ class menu:
         self.current_menu = 1
         self.boxes = []
         
+    def winner(self, who):
+        self.winState = "{0} was the winner!".format(who)
+        
+    def reset(self, width, height):
+        self.boxes = []
+        self.boxes.append(menuBox(width/2, height/2 - 50, 100, 50, self.winState, 1, False))
+        self.boxes.append(menuBox(width/2, height/2, 100, 50, "Menu", 1))
+        
     def mainMenu(self, width, height):
         self.boxes = []
         self.boxes.append(menuBox(width/2, height/2, 100, 50, "Play", 0))
@@ -37,7 +45,7 @@ class menu:
             for i in range(len(self.boxes)):
                 if (self.boxes[i].clicked()):
                     self.current_menu = self.boxes[i].dothis
-                    self.localdelay(500)
+                    self.localdelay(300)
                     
         return self.current_menu
     
