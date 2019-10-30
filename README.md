@@ -1,2 +1,2 @@
-# tic-tack-hoe
+# tic-tack-toe
 need I say more
